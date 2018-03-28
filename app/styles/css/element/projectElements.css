@@ -26,9 +26,9 @@
   position: absolute;
   right: 25px;
   cursor: pointer;
-}
-.project__fullScreen:hover {
-  opacity: 0.6;
+  pointer-events: none;
+  opacity: 0;
+  transition: 150ms opacity ease;
 }
 .project__addTaskInput {
   width: 100%;
