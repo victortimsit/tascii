@@ -1,0 +1,1 @@
+const fullScreen = new FullScreen('.project__fullScreen', '.project__content')

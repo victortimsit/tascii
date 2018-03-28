@@ -1,0 +1,73 @@
+.menu__user {
+  height: 27px;
+  width: 100%;
+}
+.menu__userPicture {
+  width: 40px;
+  height: 40px;
+  margin-left: -8px;
+  margin-top: -5px;
+  border-radius: 50%;
+  float: left;
+  background-color: #3997d6;
+}
+.menu__userName {
+  width: 120px;
+  margin-top: 7px;
+  padding-left: 22px;
+  display: inline-block;
+  vertical-align: sub;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+.menu__signOut {
+  margin-top: 2px;
+  display: inline-block;
+  float: right;
+}
+.menu__navigationName {
+  position: absolute;
+  margin-left: 55px;
+}
+.menu__navigationCount {
+  position: absolute;
+  right: 0px;
+  color: #9b9b9b;
+}
+.menu__navigation {
+  margin-top: 96px;
+  margin-bottom: 384px;
+}
+.menu__element {
+  margin-bottom: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.menu__addProject {
+  width: 100%;
+  position: sticky;
+  margin-top: 366px;
+  float: right;
+  bottom: 38px;
+}
+.menu__all {
+  margin-bottom: 16px;
+}
+.menu__important {
+  margin-bottom: 16px;
+}
+.menu__work {
+  margin-bottom: 16px;
+}
+.menu__home {
+  margin-bottom: 16px;
+}
+.menu__lessThreeDays {
+  margin-bottom: 16px;
+}
+.menu__navigationIcon {
+  width: 24px;
+  height: 24px;
+  fill: #9b9b9b;
+}

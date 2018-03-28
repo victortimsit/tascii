@@ -1,0 +1,12 @@
+.project {
+  width: 344px;
+  min-width: 344px;
+  height: auto;
+  margin: 10px;
+  position: relative;
+  border-radius: 4px;
+  background-color: #fff;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  transition: 300ms;
+}

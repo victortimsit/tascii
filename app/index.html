@@ -1,17 +1,303 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Page</title>
-    <!--build:css styles/styles.min.css-->
-    <link rel="stylesheet" href="styles/css/base/styles.css" />
-    <!--endbuild-->
-  </head>
-  <body>
-    <!--build:js scripts/main.min.js -->
-    <script src="scripts/script.js"></script>
-    <!--endbuild-->
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <!--build:css styles/styles.min.css-->
+  <link rel="stylesheet" href="styles/css/base/styles.css" />
+  <link rel="stylesheet" href="styles/css/layout/menu.css" />
+  <link rel="stylesheet" href="styles/css/layout/container.css" />
+  <link rel="stylesheet" href="styles/css/layout/project.css" />
+  <link rel="stylesheet" href="styles/css/element/menuElements.css" />
+  <link rel="stylesheet" href="styles/css/element/encouragementSentence.css" />
+  <link rel="stylesheet" href="styles/css/element/projectElements.css" />
+  <link rel="stylesheet" href="styles/css/state/menuActive.css" />
+  <link rel="stylesheet" href="styles/css/state/projectFullScreen.css" />
+  <link rel="stylesheet" href="styles/css/tools/reset.css" />
+  <!--endbuild-->
+</head>
+
+<body>
+  <div class="menu">
+    <div class="menu__user">
+      <span class="menu__userPicture"></span>
+      <span class="menu__userName">Victor Timsit</span>
+      <span class="menu__signOut">
+        <svg class="menu__navigationIcon"><use xlink:href="assets/images/materialIcons/signOut.svg#signOut"></use></svg>
+    </span>
+    </div>
+    <ul class="menu__navigation">
+      <li class="menu__all menu__element">
+        <svg class="menu__navigationIcon menu__all--active"><use xlink:href="assets/images/materialIcons/all.svg#all"></use></svg>
+        <span class="menu__navigationName">All</span>
+        <span class="menu__navigationCount">12</span>
+      </li>
+      <li class="menu__important menu__element">
+        <svg class="menu__navigationIcon menu__important--active"><use xlink:href="assets/images/materialIcons/important.svg#important"></use></svg>
+        <span class="menu__navigationName">Important</span>
+        <span class="menu__navigationCount">12</span>
+      </li>
+      <li class="menu__work menu__element">
+        <svg class="menu__navigationIcon menu__work--active"><use xlink:href="assets/images/materialIcons/work.svg#work"></use></svg>
+        <span class="menu__navigationName">Work</span>
+        <span class="menu__navigationCount">12</span>
+      </li>
+      <li class="menu__home menu__element">
+        <svg class="menu__navigationIcon menu__home--active"><use xlink:href="assets/images/materialIcons/home.svg#home"></use></svg>
+        <span class="menu__navigationName">Home</span>
+        <span class="menu__navigationCount">12</span>
+      </li>
+      <li class="menu__lessThreeDays menu__element">
+        <svg class="menu__navigationIcon menu__lessThreeDays--active"><use xlink:href="assets/images/materialIcons/lessThreeDays.svg#lessThreeDays"></use></svg>
+        <span class="menu__navigationName">Less 3 days</span>
+        <span class="menu__navigationCount">12</span>
+      </li>
+      <li class="menu__done menu__element">
+        <svg class="menu__navigationIcon menu__done--active"><use xlink:href="assets/images/materialIcons/done.svg#done"></use></svg>
+        <span class="menu__navigationName">Done</span>
+        <span class="menu__navigationCount">12</span>
+      </li>
+    </ul>
+    <ul class="menu__addProject">
+        <li class="menu__element">
+          <svg class="menu__navigationIcon menu__addProject--active"><use xlink:href="assets/images/materialIcons/addProject.svg#addProject"></use></svg>
+          <span class="menu__navigationIcon"></span>
+          <span class="menu__navigationName">Add project</span>
+        </li>
+    </ul>
+  </div>
+  <div class="container">
+    <h1 class="encouragementSentence">Go, at least a little !</h1>
+    <div class="projects">
+      <div class="project">
+        <div class="project__progressBar">
+          <div class="project__progressBar--active"></div>
+        </div>
+        <div class="project__header">
+          <svg class="project__icon menu__important--active"><use xlink:href="assets/images/materialIcons/important.svg#important"></use></svg>
+          <h2 class="project__title">Do tasky app</h2>
+          <img class="project__fullScreen project__fullScreen--active" src="assets/images/materialIcons/fullScreen.svg" alt="full screen icon">
+          <img class="project__fullScreen" src="assets/images/materialIcons/ExitfullScreen.svg" alt="Exit full screen icon">
+        </div>
+        <input class="project__addTaskInput" type="text" name="addTask" placeholder="Add a task...">
+        <div class="project__gradientTop"></div>
+        <div class="project__content">
+          <form action="/action_page.php">
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-1" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-1">Make tasky wireframes 😀</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-2" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-2">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-3" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-3">Make php account system 👨‍💻</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-4" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-4">Create a MySQL data base 🙈</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-5" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-5">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-6" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-6">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-7" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-7">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-8" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-8">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-9" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-9">Tasky mock-ups ☺️</label>
+            </div>
+          </form> 
+          <div class="project__gradientBottom"></div>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project__progressBar">
+          <div class="project__progressBar--active"></div>
+        </div>
+        <div class="project__header">
+          <svg class="project__icon menu__important--active"><use xlink:href="assets/images/materialIcons/important.svg#important"></use></svg>
+          <h2 class="project__title">Do tasky app</h2>
+          <img class="project__fullScreen project__fullScreen--active" src="assets/images/materialIcons/fullScreen.svg" alt="full screen icon">
+          <img class="project__fullScreen" src="assets/images/materialIcons/ExitfullScreen.svg" alt="Exit full screen icon">
+        </div>
+        <input class="project__addTaskInput" type="text" name="addTask" placeholder="Add a task...">
+        <div class="project__gradientTop"></div>
+        <div class="project__content">
+          <form action="/action_page.php">
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-1" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-1">Make tasky wireframes 😀</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-2" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-2">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-3" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-3">Make php account system 👨‍💻</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-4" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-4">Create a MySQL data base 🙈</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-5" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-5">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-6" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-6">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-7" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-7">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-8" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-8">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-9" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-9">Tasky mock-ups ☺️</label>
+            </div>
+          </form> 
+          <div class="project__gradientBottom"></div>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project__progressBar">
+          <div class="project__progressBar--active"></div>
+        </div>
+        <div class="project__header">
+          <svg class="project__icon menu__important--active"><use xlink:href="assets/images/materialIcons/important.svg#important"></use></svg>
+          <h2 class="project__title">Do tasky app</h2>
+          <img class="project__fullScreen project__fullScreen--active" src="assets/images/materialIcons/fullScreen.svg" alt="full screen icon">
+          <img class="project__fullScreen" src="assets/images/materialIcons/ExitfullScreen.svg" alt="Exit full screen icon">
+        </div>
+        <input class="project__addTaskInput" type="text" name="addTask" placeholder="Add a task...">
+        <div class="project__gradientTop"></div>
+        <div class="project__content">
+          <form action="/action_page.php">
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-1" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-1">Make tasky wireframes 😀</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-2" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-2">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-3" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-3">Make php account system 👨‍💻</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-4" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-4">Create a MySQL data base 🙈</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-5" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-5">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-6" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-6">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-7" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-7">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-8" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-8">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-9" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-9">Tasky mock-ups ☺️</label>
+            </div>
+          </form> 
+          <div class="project__gradientBottom"></div>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project__progressBar">
+          <div class="project__progressBar--active"></div>
+        </div>
+        <div class="project__header">
+          <svg class="project__icon menu__important--active"><use xlink:href="assets/images/materialIcons/important.svg#important"></use></svg>
+          <h2 class="project__title">Do tasky app</h2>
+          <img class="project__fullScreen project__fullScreen--active" src="assets/images/materialIcons/fullScreen.svg" alt="full screen icon">
+          <img class="project__fullScreen" src="assets/images/materialIcons/ExitfullScreen.svg" alt="Exit full screen icon">
+        </div>
+        <input class="project__addTaskInput" type="text" name="addTask" placeholder="Add a task...">
+        <div class="project__gradientTop"></div>
+        <div class="project__content">
+          <form action="/action_page.php">
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-1" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-1">Make tasky wireframes 😀</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-2" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-2">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-3" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-3">Make php account system 👨‍💻</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-4" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-4">Create a MySQL data base 🙈</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-5" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-5">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-6" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-6">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-7" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-7">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-8" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-8">Tasky mock-ups ☺️</label>
+            </div>
+            <div class="project__task">
+              <input class="project__checkbox" type="checkbox" id="task-9" name="subscribe" value="newsletter">
+              <label class="project__taskDescription" for="task-9">Tasky mock-ups ☺️</label>
+            </div>
+          </form> 
+          <div class="project__gradientBottom"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="baseline">
+    <img src="assets/baseline.png" alt="">
+  </div>
+  <!--build:js scripts/main.min.js -->
+  <script src="scripts/fullScreen.js"></script>
+  <script src="scripts/main.js"></script>
+  <!--endbuild-->
+</body>
+
 </html>

@@ -1,0 +1,12 @@
+.container {
+  margin-left: 240px;
+  padding-left: 54px;
+  padding-right: 54px;
+  padding-top: 62px;
+  overflow-y: scroll;
+}
+.projects {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}

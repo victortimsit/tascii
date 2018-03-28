@@ -1,0 +1,24 @@
+.menu__signOut--active {
+  fill: #3997d6;
+}
+.menu__all--active {
+  fill: #3997d6;
+}
+.menu__important--active {
+  fill: #d0021b;
+}
+.menu__work--active {
+  fill: #dd6000;
+}
+.menu__home--active {
+  fill: #b0254b;
+}
+.menu__lessThreeDays--active {
+  fill: #fc0;
+}
+.menu__done--active {
+  fill: #19bf65;
+}
+.menu__addProject--active {
+  fill: #3997d6;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Mask</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M614,157 L617,157 L617,160 L619,160 L619,155 L614,155 L614,157 L614,157 Z M617,149 L614,149 L614,151 L619,151 L619,146 L617,146 L617,149 L617,149 Z M623,160 L625,160 L625,157 L628,157 L628,155 L623,155 L623,160 L623,160 Z M625,149 L625,146 L623,146 L623,151 L628,151 L628,149 L625,149 L625,149 Z" id="path-1"></path>
+    </defs>
+    <g id="grid-Perfect-16px-BackUP-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-614.000000, -146.000000)">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#D8D8D8" xlink:href="#path-1"></use>
+    </g>
+</svg>
