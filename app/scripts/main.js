@@ -1,1 +1,1 @@
-const fullScreen = new FullScreen('.project__fullScreen', '.project__fullScreenExit', '.project' ,'.project__content')
+const fullScreen = new FullScreen('.project__fullScreen', '.project__fullScreenExit', '.project' ,'.project__content', '.project__form', '.project__gradientBottom')
