@@ -4,7 +4,6 @@
   padding-left: 25px;
   padding-right: 25px;
   padding-bottom: 48px;
-  overflow-y: scroll;
 }
 .project__header {
   margin-bottom: 23px;
@@ -23,6 +22,14 @@
   font-size: 24px;
 }
 .project__fullScreen {
+  position: absolute;
+  right: 25px;
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+  transition: 150ms opacity ease;
+}
+.project__fullScreenExit {
   position: absolute;
   right: 25px;
   cursor: pointer;
