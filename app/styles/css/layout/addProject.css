@@ -1,0 +1,17 @@
+.addProject {
+  width: 400px;
+  margin-top: 50px;
+  margin-bottom: 120px;
+  margin-left: 240px;
+  position: sticky;
+  bottom: 24px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 300ms ease, transform 300ms ease;
+  transform: translateY(-100%);
+}
+.addProject:target {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0%);
+}

@@ -42,6 +42,9 @@
   display: block;
   margin-left: 25px;
 }
+.project__addTaskInput::placeholder {
+  color: #c5c5c5;
+}
 .project__progressBar {
   margin-bottom: 10px;
   width: 100%;
