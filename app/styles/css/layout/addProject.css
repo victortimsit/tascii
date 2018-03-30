@@ -1,0 +1,13 @@
+.addProject {
+  width: 400px;
+  margin-top: 50px;
+  margin-left: 240px;
+  position: sticky;
+  bottom: 22px;
+  visibility: hidden;
+  opacity: 0;
+}
+.addProject:target {
+  opacity: 1;
+  visibility: visible;
+}
