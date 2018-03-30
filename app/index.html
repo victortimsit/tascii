@@ -19,11 +19,12 @@
   <link rel="stylesheet" href="styles/css/element/addProjectElements.css" />
   <link rel="stylesheet" href="styles/css/state/menuActive.css" />
   <link rel="stylesheet" href="styles/css/state/projectFullScreen.css" />
+  <link rel="stylesheet" href="styles/css/state/addProjectVisible.css" />
   <link rel="stylesheet" href="styles/css/tools/reset.css" />
   <!--endbuild-->
 </head>
 
-<body>
+<body class="body">
   <div class="menu">
     <div class="menu__user">
       <span class="menu__userPicture"></span>
@@ -63,11 +64,11 @@
         <span class="menu__navigationName">Home</span>
         <span class="menu__navigationCount">12</span>
       </li>
-      <li class="menu__lessThreeDays menu__element">
-        <svg class="menu__navigationIcon menu__lessThreeDays--active">
-          <use xlink:href="assets/images/materialIcons/lessThreeDays.svg#lessThreeDays"></use>
+      <li class="menu__hobby menu__element">
+        <svg class="menu__navigationIcon menu__hobby--active">
+          <use xlink:href="assets/images/materialIcons/hobby.svg#hobby"></use>
         </svg>
-        <span class="menu__navigationName">Less 3 days</span>
+        <span class="menu__navigationName">Hobby</span>
         <span class="menu__navigationCount">12</span>
       </li>
       <li class="menu__done menu__element">
@@ -79,14 +80,14 @@
       </li>
     </ul>
     <ul class="menu__addProject">
-      <a class="menu__addProject--hover" href="#addProject--visible">
+      <div class="menu__addProject--hover">
         <li class="menu__element menu__addProjectElement">
           <svg class="menu__navigationIcon menu__addProject--active">
             <use xlink:href="assets/images/materialIcons/addProject.svg#addProject"></use>
           </svg>
           <span class="menu__navigationName">Add project</span>
         </li>
-      </a>
+      </div>
     </ul>
   </div>
   <div class="container">
@@ -306,7 +307,7 @@
       </div>
     </div>
   </div>
-  <div class="addProject" id=addProject--visible>
+  <div class="addProject addProject--hidden">
     <div class="addProject__triangle"></div>
     <div class="addProject__box">
       <input class="addProject__projecTitleInput" type="text" name="addTask" placeholder="Project title...">
@@ -320,21 +321,21 @@
           </svg>
         </label>
         <label class="addProject__category">
-          <input class="addProject__radio" type="radio" name="category" value="work" />
-          <svg class="addProject__icon addProject__work">
+          <input class="addProject__radio" type="radio" name="category" value="work" checked/>
+          <svg class="addProject__icon addProject__colorIcon addProject__icon--blue">
             <use xlink:href="assets/images/materialIcons/work.svg#work"></use>
           </svg>
         </label>
         <label class="addProject__category">
           <input class="addProject__radio" type="radio" name="category" value="home" />
-          <svg class="addProject__icon addProject__home">
+          <svg class="addProject__icon addProject__colorIcon addProject__icon--blue">
             <use xlink:href="assets/images/materialIcons/home.svg#home"></use>
           </svg>
         </label>
         <label class="addProject__category">
-          <input class="addProject__radio" type="radio" name="category" value="lessThreeDays" />
-          <svg class="addProject__icon addProject__lessThreeDays">
-            <use xlink:href="assets/images/materialIcons/lessThreeDays.svg#lessThreeDays"></use>
+          <input class="addProject__radio" type="radio" name="category" value="hobby" />
+          <svg class="addProject__icon addProject__colorIcon addProject__icon--blue">
+            <use xlink:href="assets/images/materialIcons/hobby.svg#hobby"></use>
           </svg>
         </label>
       </div>
@@ -342,7 +343,7 @@
       <h3 class="addProject__Title">Color</h3>
       <div class="addProject__categoryList">
         <label class="addProject__category">
-          <input class="addProject__radio" type="radio" name="color" value="blue" />
+          <input class="addProject__radio" type="radio" name="color" value="blue" checked/>
           <div class="addProject__color addProject__blue addProject__icon"></div>
         </label>
         <label class="addProject__category">
@@ -369,7 +370,9 @@
     <img src="assets/baseline.png" alt="">
   </div>
   <!--build:js scripts/main.min.js -->
-  <script src="scripts/fullScreen.js"></script>
+  <script src="scripts/fullScreenBox.js"></script>
+  <script src="scripts/AddProjectWindow.js"></script>
+  <script src="scripts/CategoryColor.js"></script>
   <script src="scripts/main.js"></script>
   <!--endbuild-->
 </body>

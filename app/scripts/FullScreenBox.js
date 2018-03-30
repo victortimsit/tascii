@@ -1,11 +1,11 @@
 class FullScreen {
     constructor(fullScreenIconClass, fullScreenExitIconClass, projectBoxClass, contentBoxClass, projectForm, gradientBox) {
-        this.fullScreen = document.querySelectorAll(fullScreenIconClass)
-        this.fullScreenExit = document.querySelectorAll(fullScreenExitIconClass)
-        this.projectBox = document.querySelectorAll(projectBoxClass)
-        this.contentBox = document.querySelectorAll(contentBoxClass)
-        this.projectForms = document.querySelectorAll(projectForm)
-        this.gradientBox = document.querySelectorAll(gradientBox)
+        this.fullScreen = document.querySelectorAll('.' + fullScreenIconClass)
+        this.fullScreenExit = document.querySelectorAll('.' + fullScreenExitIconClass)
+        this.projectBox = document.querySelectorAll('.' + projectBoxClass)
+        this.contentBox = document.querySelectorAll('.' + contentBoxClass)
+        this.projectForms = document.querySelectorAll('.' + projectForm)
+        this.gradientBox = document.querySelectorAll('.' + gradientBox)
 
         for(let i = 0; i < this.fullScreen.length; i++) {
             // Set current form and current tasks

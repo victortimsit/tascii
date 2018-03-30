@@ -1,0 +1,28 @@
+.addProject--visible {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1) translateX(0px);
+}
+.addProject--hidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0) translateX(100px);
+}
+.menu__addProject--hover {
+  cursor: pointer;
+}
+.addProject__radio:checked + .addProject__icon--blue {
+  fill: #3997d6;
+}
+.addProject__radio:checked + .addProject__icon--orange {
+  fill: #dd6000;
+}
+.addProject__radio:checked + .addProject__icon--green {
+  fill: #19bf65;
+}
+.addProject__radio:checked + .addProject__icon--purple {
+  fill: #b0254b;
+}
+.addProject__radio:checked + .addProject__icon--yellow {
+  fill: #fc0;
+}

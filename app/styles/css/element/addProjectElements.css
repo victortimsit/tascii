@@ -55,15 +55,6 @@
 .addProject__radio:checked + .addProject__important {
   fill: #d0021b;
 }
-.addProject__radio:checked + .addProject__work {
-  fill: #dd6000;
-}
-.addProject__radio:checked + .addProject__home {
-  fill: #b0254b;
-}
-.addProject__radio:checked + .addProject__lessThreeDays {
-  fill: #fc0;
-}
 .addProject__color {
   display: inline-block;
   border-radius: 50%;
