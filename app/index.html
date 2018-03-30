@@ -321,20 +321,20 @@
           </svg>
         </label>
         <label class="addProject__category">
-          <input class="addProject__radio" type="radio" name="category" value="work" />
-          <svg class="addProject__icon addProject__work">
+          <input class="addProject__radio" type="radio" name="category" value="work" checked/>
+          <svg class="addProject__icon addProject__colorIcon addProject__icon--blue">
             <use xlink:href="assets/images/materialIcons/work.svg#work"></use>
           </svg>
         </label>
         <label class="addProject__category">
           <input class="addProject__radio" type="radio" name="category" value="home" />
-          <svg class="addProject__icon addProject__home">
+          <svg class="addProject__icon addProject__colorIcon addProject__icon--blue">
             <use xlink:href="assets/images/materialIcons/home.svg#home"></use>
           </svg>
         </label>
         <label class="addProject__category">
           <input class="addProject__radio" type="radio" name="category" value="hobby" />
-          <svg class="addProject__icon addProject__hobby">
+          <svg class="addProject__icon addProject__colorIcon addProject__icon--blue">
             <use xlink:href="assets/images/materialIcons/hobby.svg#hobby"></use>
           </svg>
         </label>
@@ -343,7 +343,7 @@
       <h3 class="addProject__Title">Color</h3>
       <div class="addProject__categoryList">
         <label class="addProject__category">
-          <input class="addProject__radio" type="radio" name="color" value="blue" />
+          <input class="addProject__radio" type="radio" name="color" value="blue" checked/>
           <div class="addProject__color addProject__blue addProject__icon"></div>
         </label>
         <label class="addProject__category">
@@ -372,6 +372,7 @@
   <!--build:js scripts/main.min.js -->
   <script src="scripts/fullScreenBox.js"></script>
   <script src="scripts/AddProjectWindow.js"></script>
+  <script src="scripts/CategoryColor.js"></script>
   <script src="scripts/main.js"></script>
   <!--endbuild-->
 </body>
