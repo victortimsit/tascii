@@ -1,6 +1,32 @@
+<?php
+  include 'includes/error.php';
+  include 'includes/dataBase_connection.php';
+  include 'includes/addProject_from.php';
+
+  $query = $pdo->query('SELECT * FROM users ORDER BY id DESC');
+  $users = $query->fetchAll();
+  // Valeurs
+  $data = ['first_name' => 'Victor', 'password' => '6d744cc4ef72a6b81ca9ff2f5fd47aa4'];
+  
+  // Prépare la requête
+  $prepare = $pdo->prepare('INSERT INTO users (first_name, password) VALUES (:first_name, :password)');
+  
+  // // Bind les valeurs
+  // $prepare->bindValue(':first_name', $data['first_name']);
+  // $prepare->bindValue(':password', $data['password']);
+  
+  // Execute la requête
+  // $exec = $prepare->execute($data);
+
+  echo '<pre>';
+  var_dump($_POST);
+  echo '</pre>';
+
+              
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale = 1.0">
@@ -28,7 +54,7 @@
   <div class="menu">
     <div class="menu__user">
       <span class="menu__userPicture"></span>
-      <span class="menu__userName">Victor Timsit</span>
+      <span class="menu__userName">Victor</span>
       <span class="menu__signOut">
         <svg class="menu__navigationIcon">
           <use xlink:href="assets/images/materialIcons/signOut.svg#signOut"></use>
@@ -310,60 +336,65 @@
   <div class="addProject addProject--hidden">
     <div class="addProject__triangle"></div>
     <div class="addProject__box">
-      <input class="addProject__projecTitleInput" type="text" name="addTask" placeholder="Project title...">
-      <!-- Category -->
-      <h3 class="addProject__Title">Category</h3>
-      <div class="addProject__categoryList">
-        <label class="addProject__category">
-          <input class="addProject__radio" type="radio" name="category" value="important" />
-          <svg class="addProject__icon addProject__important">
-            <use xlink:href="assets/images/materialIcons/important.svg#important"></use>
-          </svg>
+      <form action="#" method="post">
+        <input class="addProject__projecTitleInput" type="text" name="project_title" placeholder="Project title...">
+        <!-- Category -->
+        <h3 class="addProject__Title">Category</h3>
+        <div class="addProject__categoryList">
+          <label class="addProject__category">
+            <input class="addProject__radio" type="radio" name="category" value="important" />
+            <svg class="addProject__icon addProject__important">
+              <use xlink:href="assets/images/materialIcons/important.svg#important"></use>
+            </svg>
+          </label>
+          <label class="addProject__category">
+            <input class="addProject__radio" type="radio" name="category" value="work" checked/>
+            <svg class="addProject__icon addProject__colorIcon addProject__icon--blue">
+              <use xlink:href="assets/images/materialIcons/work.svg#work"></use>
+            </svg>
+          </label>
+          <label class="addProject__category">
+            <input class="addProject__radio" type="radio" name="category" value="home" />
+            <svg class="addProject__icon addProject__colorIcon addProject__icon--blue">
+              <use xlink:href="assets/images/materialIcons/home.svg#home"></use>
+            </svg>
+          </label>
+          <label class="addProject__category">
+            <input class="addProject__radio" type="radio" name="category" value="hobby" />
+            <svg class="addProject__icon addProject__colorIcon addProject__icon--blue">
+              <use xlink:href="assets/images/materialIcons/hobby.svg#hobby"></use>
+            </svg>
+          </label>
+        </div>
+        <!-- Color -->
+        <h3 class="addProject__Title">Color</h3>
+        <div class="addProject__categoryList">
+          <label class="addProject__category">
+            <input class="addProject__radio" type="radio" name="color" value="blue" checked/>
+            <div class="addProject__color addProject__blue addProject__icon"></div>
+          </label>
+          <label class="addProject__category">
+            <input class="addProject__radio" type="radio" name="color" value="orange" />
+            <div class="addProject__color addProject__orange addProject__icon"></div>
+          </label>
+          <label class="addProject__category">
+            <input class="addProject__radio" type="radio" name="color" value="green" />
+            <div class="addProject__color addProject__green addProject__icon"></div>
+          </label>
+          <label class="addProject__category">
+            <input class="addProject__radio" type="radio" name="color" value="purple" />
+            <div class="addProject__color addProject__purple addProject__icon"></div>
+          </label>
+          <label class="addProject__category">
+            <input class="addProject__radio" type="radio" name="color" value="yellow" />
+            <div class="addProject__color addProject__yellow addProject__icon"></div>
+          </label>
+        </div>
+        <label>
+          <input class="addProject__radio" type="submit">
+          <div class="addProject__button">Create project</div>
         </label>
-        <label class="addProject__category">
-          <input class="addProject__radio" type="radio" name="category" value="work" checked/>
-          <svg class="addProject__icon addProject__colorIcon addProject__icon--blue">
-            <use xlink:href="assets/images/materialIcons/work.svg#work"></use>
-          </svg>
-        </label>
-        <label class="addProject__category">
-          <input class="addProject__radio" type="radio" name="category" value="home" />
-          <svg class="addProject__icon addProject__colorIcon addProject__icon--blue">
-            <use xlink:href="assets/images/materialIcons/home.svg#home"></use>
-          </svg>
-        </label>
-        <label class="addProject__category">
-          <input class="addProject__radio" type="radio" name="category" value="hobby" />
-          <svg class="addProject__icon addProject__colorIcon addProject__icon--blue">
-            <use xlink:href="assets/images/materialIcons/hobby.svg#hobby"></use>
-          </svg>
-        </label>
-      </div>
-      <!-- Color -->
-      <h3 class="addProject__Title">Color</h3>
-      <div class="addProject__categoryList">
-        <label class="addProject__category">
-          <input class="addProject__radio" type="radio" name="color" value="blue" checked/>
-          <div class="addProject__color addProject__blue addProject__icon"></div>
-        </label>
-        <label class="addProject__category">
-          <input class="addProject__radio" type="radio" name="color" value="orange" />
-          <div class="addProject__color addProject__orange addProject__icon"></div>
-        </label>
-        <label class="addProject__category">
-          <input class="addProject__radio" type="radio" name="color" value="green" />
-          <div class="addProject__color addProject__green addProject__icon"></div>
-        </label>
-        <label class="addProject__category">
-          <input class="addProject__radio" type="radio" name="color" value="purple" />
-          <div class="addProject__color addProject__purple addProject__icon"></div>
-        </label>
-        <label class="addProject__category">
-          <input class="addProject__radio" type="radio" name="color" value="yellow" />
-          <div class="addProject__color addProject__yellow addProject__icon"></div>
-        </label>
-      </div>
-      <div class="addProject__button">Create project</div>
+      </form>
     </div>
   </div>
   <div class="baseline">
