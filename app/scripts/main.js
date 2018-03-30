@@ -1,1 +1,2 @@
-const fullScreen = new FullScreen('.project__fullScreen', '.project__fullScreenExit', '.project' ,'.project__content', '.project__form', '.project__gradientBottom')
+const fullScreen = new FullScreen('project__fullScreen', 'project__fullScreenExit', 'project' ,'project__content', 'project__form', 'project__gradientBottom')
+const addProject = new AddProjectWindow('menu__addProject', 'container', 'addProject', 'addProject--visible', 'addProject--hidden')

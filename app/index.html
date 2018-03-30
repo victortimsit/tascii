@@ -19,11 +19,12 @@
   <link rel="stylesheet" href="styles/css/element/addProjectElements.css" />
   <link rel="stylesheet" href="styles/css/state/menuActive.css" />
   <link rel="stylesheet" href="styles/css/state/projectFullScreen.css" />
+  <link rel="stylesheet" href="styles/css/state/addProjectVisible.css" />
   <link rel="stylesheet" href="styles/css/tools/reset.css" />
   <!--endbuild-->
 </head>
 
-<body>
+<body class="body">
   <div class="menu">
     <div class="menu__user">
       <span class="menu__userPicture"></span>
@@ -79,14 +80,14 @@
       </li>
     </ul>
     <ul class="menu__addProject">
-      <a class="menu__addProject--hover" href="#addProject--visible">
+      <div class="menu__addProject--hover">
         <li class="menu__element menu__addProjectElement">
           <svg class="menu__navigationIcon menu__addProject--active">
             <use xlink:href="assets/images/materialIcons/addProject.svg#addProject"></use>
           </svg>
           <span class="menu__navigationName">Add project</span>
         </li>
-      </a>
+      </div>
     </ul>
   </div>
   <div class="container">
@@ -306,7 +307,7 @@
       </div>
     </div>
   </div>
-  <div class="addProject" id=addProject--visible>
+  <div class="addProject addProject--hidden">
     <div class="addProject__triangle"></div>
     <div class="addProject__box">
       <input class="addProject__projecTitleInput" type="text" name="addTask" placeholder="Project title...">
@@ -369,7 +370,8 @@
     <img src="assets/baseline.png" alt="">
   </div>
   <!--build:js scripts/main.min.js -->
-  <script src="scripts/fullScreen.js"></script>
+  <script src="scripts/fullScreenBox.js"></script>
+  <script src="scripts/AddProjectWindow.js"></script>
   <script src="scripts/main.js"></script>
   <!--endbuild-->
 </body>
