@@ -61,7 +61,7 @@
 .addProject__radio:checked + .addProject__home {
   fill: #b0254b;
 }
-.addProject__radio:checked + .addProject__lessThreeDays {
+.addProject__radio:checked + .addProject__hobby {
   fill: #fc0;
 }
 .addProject__color {
