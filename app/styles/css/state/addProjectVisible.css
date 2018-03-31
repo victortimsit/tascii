@@ -26,3 +26,21 @@
 .addProject__radio:checked + .addProject__icon--yellow {
   fill: #fc0;
 }
+.addProject__error--active {
+  opacity: 1;
+}
+.addProject__radio--blue {
+  fill: #3997d6;
+}
+.addProject__radio--orange {
+  fill: #dd6000;
+}
+.addProject__radio--green {
+  fill: #19bf65;
+}
+.addProject__radio--purple {
+  fill: #b0254b;
+}
+.addProject__radio--yellow {
+  fill: #fc0;
+}

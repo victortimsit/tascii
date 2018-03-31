@@ -329,12 +329,12 @@
       </div>
     </div>
   </div>
-  <div class="addProject addProject--hidden">
+  <div class="addProject <?= !empty($errors['project_name']) ? 'addProject--visible' : 'addProject--hidden' ?>">
     <div class="addProject__triangle"></div>
     <div class="addProject__box">
       <form action="#" method="post">
         <input class="addProject__projecTitleInput" type="text" name="project_title" placeholder="Project title...">
-        <div class="addProject__error">
+        <div class="addProject__error <?= !empty($errors['project_name']) ? $errors['project_name'] : false ?>">
           <div class="addProject__errorLine"></div>
           <p class="addProject__errorMessage">Title is required</p>
         </div>
@@ -342,26 +342,26 @@
         <h3 class="addProject__Title">Category</h3>
         <div class="addProject__categoryList">
           <label class="addProject__category">
-            <input class="addProject__radio" type="radio" name="category" value="important" />
-            <svg class="addProject__icon addProject__important">
+            <input class="addProject__radio" type="radio" name="category" value="important" <?= !empty($_POST['category']) && $_POST['category'] == 'important' ? 'checked' : false ?>/>
+            <svg class="addProject__icon addProject__important <?= !empty($_POST['category']) && $_POST['category'] == 'important' ? 'addProject__categoryRadio--checked' : false ?>">
               <use xlink:href="assets/images/materialIcons/important.svg#important"></use>
             </svg>
           </label>
           <label class="addProject__category">
             <input class="addProject__radio" type="radio" name="category" value="work" checked/>
-            <svg class="addProject__icon addProject__colorIcon addProject__icon--blue">
+            <svg class="addProject__icon addProject__colorIcon addProject__icon--blue <?= !empty($_POST['category']) && $_POST['category'] == 'work' ? 'addProject__categoryRadio--checked' : false ?>">
               <use xlink:href="assets/images/materialIcons/work.svg#work"></use>
             </svg>
           </label>
           <label class="addProject__category">
-            <input class="addProject__radio" type="radio" name="category" value="home" />
-            <svg class="addProject__icon addProject__colorIcon addProject__icon--blue">
+            <input class="addProject__radio" type="radio" name="category" value="home" <?= !empty($_POST['category']) && $_POST['category'] == 'home' ? 'checked' : false ?>/>
+            <svg class="addProject__icon addProject__colorIcon addProject__icon--blue <?= !empty($_POST['category']) && $_POST['category'] == 'home' ? 'addProject__categoryRadio--checked' : false ?>">
               <use xlink:href="assets/images/materialIcons/home.svg#home"></use>
             </svg>
           </label>
           <label class="addProject__category">
-            <input class="addProject__radio" type="radio" name="category" value="hobby" />
-            <svg class="addProject__icon addProject__colorIcon addProject__icon--blue">
+            <input class="addProject__radio" type="radio" name="category" value="hobby" <?= !empty($_POST['category']) && $_POST['category'] == 'hobby' ? 'checked' : false ?>/>
+            <svg class="addProject__icon addProject__colorIcon addProject__icon--blue <?= !empty($_POST['category']) && $_POST['category'] == 'hobby' ? 'addProject__categoryRadio--checked' : false ?>">
               <use xlink:href="assets/images/materialIcons/hobby.svg#hobby"></use>
             </svg>
           </label>
@@ -370,24 +370,24 @@
         <h3 class="addProject__Title">Color</h3>
         <div class="addProject__categoryList">
           <label class="addProject__category">
-            <input class="addProject__radio" type="radio" name="color" value="blue" checked/>
-            <div class="addProject__color addProject__blue addProject__icon"></div>
+            <input class="addProject__radio" type="radio" name="color" value="blue" data-color="blue" checked/>
+            <div class="addProject__color addProject__blue addProject__icon <?= !empty($_POST['color']) && $_POST['color'] == 'blue' ? 'addProject__colorRadio--checked' : false ?>"></div>
           </label>
           <label class="addProject__category">
-            <input class="addProject__radio" type="radio" name="color" value="orange" />
-            <div class="addProject__color addProject__orange addProject__icon"></div>
+            <input class="addProject__radio" type="radio" name="color" value="orange" <?= !empty($_POST['color']) && $_POST['color'] == 'orange' ? 'checked' : false ?>/>
+            <div class="addProject__color addProject__orange addProject__icon <?= !empty($_POST['color']) && $_POST['color'] == 'orange' ? 'addProject__colorRadio--checked' : false ?>" data-color="orange"></div>
           </label>
           <label class="addProject__category">
-            <input class="addProject__radio" type="radio" name="color" value="green" />
-            <div class="addProject__color addProject__green addProject__icon"></div>
+            <input class="addProject__radio" type="radio" name="color" value="green" <?= !empty($_POST['color']) && $_POST['color'] == 'green' ? 'checked' : false ?>/>
+            <div class="addProject__color addProject__green addProject__icon <?= !empty($_POST['color']) && $_POST['color'] == 'green' ? 'addProject__colorRadio--checked' : false ?>" data-color="green"></div>
           </label>
           <label class="addProject__category">
-            <input class="addProject__radio" type="radio" name="color" value="purple" />
-            <div class="addProject__color addProject__purple addProject__icon"></div>
+            <input class="addProject__radio" type="radio" name="color" value="purple" <?= !empty($_POST['color']) && $_POST['color'] == 'purple' ? 'checked' : false ?>/>
+            <div class="addProject__color addProject__purple addProject__icon <?= !empty($_POST['color']) && $_POST['color'] == 'purple' ? 'addProject__colorRadio--checked' : false ?>" data-color="purple"></div>
           </label>
           <label class="addProject__category">
-            <input class="addProject__radio" type="radio" name="color" value="yellow" />
-            <div class="addProject__color addProject__yellow addProject__icon"></div>
+            <input class="addProject__radio" type="radio" name="color" value="yellow" <?= !empty($_POST['color']) && $_POST['color'] == 'yellow' ? 'checked' : false ?>/>
+            <div class="addProject__color addProject__yellow addProject__icon <?= !empty($_POST['color']) && $_POST['color'] == 'yellow' ? 'addProject__colorRadio--checked' : false ?>" data-color="yellow"></div>
           </label>
         </div>
         <label>

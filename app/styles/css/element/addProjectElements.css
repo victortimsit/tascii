@@ -1,7 +1,7 @@
 .addProject__triangle {
   width: 13px;
   height: 19px;
-  margin-top: 268px;
+  margin-top: 308px;
   display: inline-block;
   float: left;
   clip-path: polygon(100% 0, 100% 100%, 0% 50%);
@@ -22,7 +22,7 @@
 .addProject__projecTitleInput {
   width: 100%;
   height: 28px !important;
-  margin-bottom: 21px;
+  margin-bottom: 61px;
   font-size: 24px;
 }
 .addProject__projecTitleInput::placeholder {
@@ -114,4 +114,22 @@
   border: none;
   transform: translateY(0px);
   box-shadow: 0px 8px 20px rgba(57,151,214,0.3);
+}
+.addProject__error {
+  width: 100%;
+  position: absolute;
+  top: 52px;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+.addProject__errorLine {
+  width: 84%;
+  height: 2px;
+  margin-bottom: 6px;
+  background-color: #d41125;
+}
+.addProject__errorMessage {
+  color: #d41125;
+  width: 100%;
+  font-size: 14px;
 }
