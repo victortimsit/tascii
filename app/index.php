@@ -18,10 +18,6 @@
   // Execute la requête
   // $exec = $prepare->execute($data);
 
-  echo '<pre>';
-  var_dump($_POST);
-  echo '</pre>';
-
               
 ?>
 
@@ -338,6 +334,10 @@
     <div class="addProject__box">
       <form action="#" method="post">
         <input class="addProject__projecTitleInput" type="text" name="project_title" placeholder="Project title...">
+        <div class="addProject__error">
+          <div class="addProject__errorLine"></div>
+          <p class="addProject__errorMessage">Title is required</p>
+        </div>
         <!-- Category -->
         <h3 class="addProject__Title">Category</h3>
         <div class="addProject__categoryList">
@@ -406,6 +406,18 @@
   <script src="scripts/CategoryColor.js"></script>
   <script src="scripts/main.js"></script>
   <!--endbuild-->
+  <div class="php">
+    <?= 
+    '<pre>';
+    var_dump($_POST);
+    echo '</pre>';
+
+    echo '<pre>';
+    var_dump($errors);
+    echo '</pre>';
+  
+  ?>
+  </div>
 </body>
 
 </html>
