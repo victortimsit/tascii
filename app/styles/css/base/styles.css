@@ -8,11 +8,22 @@ body {
   width: 100vw;
   height: 100vh;
   position: absolute;
-  opacity: 0;
+  opacity: 0.2;
   top: 0;
 }
 h1 {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 48px;
+}
+.php {
+  position: absolute;
+  top: 0;
+  color: #d41125;
+  font-family: 'Roboto', sans-serif;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fdbabc;
+  border-radius: 4px;
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.19);
 }
