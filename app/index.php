@@ -5,10 +5,21 @@
   include 'includes/register_form.php';
   include 'includes/addProject_form.php';
 
+  function connection($account, $id) {
+    $_SESSION['user'] = $account;
+    $_SESSION['id'] = $id;
+    header('Location: ./');
+  }
+
+  function deconnection() {
+    unset($_SESSION['user']);
+    header('Location: ./');
+  }
+
   $query = $pdo->query('SELECT * FROM users ORDER BY id DESC');
   $users = $query->fetchAll();
   
-  $query = $pdo->query('SELECT * FROM projects');
+  $query = $pdo->query('SELECT * FROM projects WHERE user_id = " ' . $_SESSION['id'] . ' " ');
   // Éxécution de la requête et récupération des données
   $projects = $query->fetchAll();
 ?>

@@ -1,14 +1,5 @@
 <?php
-
-function connection($account) {
-    $_SESSION['user'] = $account;
-    header('Location: ./');
-}
-
-function deconnection() {
-    unset($_SESSION['user']);
-    header('Location: ./');
-}
+$currentUserId;
 
 if(!empty($_POST)) {
     !empty($_POST['user_name']) ? $userName = $_POST['user_name'] : $registerErrors['user_name'] = 'register__emptyError--active';
@@ -58,7 +49,7 @@ if(!empty($_POST)) {
         function passwordCheck($user, $password) {
             $userPassword = $user->password;
             if($userPassword == md5($password)) {
-                connection($user->user_name);
+                connection($user->user_name, $user->id);
             } else {
                 $registerErrors['password'] = "register__invalidPassword--active";
             }

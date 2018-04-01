@@ -5,16 +5,16 @@ if(!empty($_POST)) {
     // NE PEUT PAS ÊTRE VIDE ICI CAR DES VALEURS SONT CHECKÉS PAR DÉFAUT
     !empty($_POST['category']) ? $category = $_POST['category'] : $errors['category'] = 'empty';
     !empty($_POST['color']) ? $color = $_POST['color'] : $errors['color'] = 'empty';
+    $user_id = $_SESSION['id'];
     
     if(!empty($_POST['project_title'])) {
         // Values
-        $data = ['title' => $title, 'category' => $category, 'color' => $color];
+        $data = ['user_id' => $user_id, 'title' => $title, 'category' => $category, 'color' => $color];
         
         // Prepare request
-        $prepare = $pdo->prepare('INSERT INTO projects (title, category, color) VALUES (:title, :category, :color)');
+        $prepare = $pdo->prepare('INSERT INTO projects (user_id, title, category, color) VALUES (:user_id, :title, :category, :color)');
         
         // Execute request
         $exec = $prepare->execute($data);
     }
 }
-
