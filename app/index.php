@@ -5,11 +5,6 @@
 
   $query = $pdo->query('SELECT * FROM users ORDER BY id DESC');
   $users = $query->fetchAll();
-  // Valeurs
-  $data = ['first_name' => 'Victor', 'password' => '6d744cc4ef72a6b81ca9ff2f5fd47aa4'];
-  
-  // Prépare la requête
-  $prepare = $pdo->prepare('INSERT INTO users (first_name, password) VALUES (:first_name, :password)');
   
   // // Bind les valeurs
   // $prepare->bindValue(':first_name', $data['first_name']);
@@ -18,7 +13,11 @@
   // Execute la requête
   // $exec = $prepare->execute($data);
 
-              
+  // Préparation de la requête
+  $query = $pdo->query('SELECT * FROM projects');
+  // Éxécution de la requête et récupération des données
+  $projects = $query->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +41,7 @@
   <link rel="stylesheet" href="styles/css/state/menuActive.css" />
   <link rel="stylesheet" href="styles/css/state/projectFullScreen.css" />
   <link rel="stylesheet" href="styles/css/state/addProjectVisible.css" />
+  <link rel="stylesheet" href="styles/css/state/projectsColors.css" />
   <link rel="stylesheet" href="styles/css/tools/reset.css" />
   <!--endbuild-->
 </head>
@@ -115,6 +115,52 @@
   <div class="container">
     <h1 class="encouragementSentence">Go, at least a little !</h1>
     <div class="projects">
+      <?php foreach($projects as $project): ?>
+        <div class="project">
+          <div class="project__progressBar project__color--<?= $project->color ?>">
+            <div class="project__progressBar--active"></div>
+          </div>
+          <div class="project__header">
+            <svg class="project__icon project__icon--<?= $project->color ?>">
+              <use xlink:href="assets/images/materialIcons/<?= $project->category ?>.svg#<?= $project->category ?>"></use>
+            </svg>
+            <h2 class="project__title"><?= $project->title ?></h2>
+            <img class="project__fullScreen project__fullScreen--active" src="assets/images/materialIcons/fullScreen.svg" alt="full screen icon">
+            <img class="project__fullScreenExit" src="assets/images/materialIcons/ExitfullScreen.svg" alt="Exit full screen icon">
+          </div>
+          <input class="project__addTaskInput" type="text" name="addTask" placeholder="Add a task...">
+          <div class="project__gradientTop"></div>
+          <div class="project__content">
+            <form class="project__form" action="/action_page.php">
+              <div class="project__task">
+                <input class="project__checkbox" type="checkbox" id="task-1" name="subscribe" value="newsletter">
+                <label class="project__taskDescription" for="task-1">Make tasky wireframes 😀</label>
+              </div>
+              <div class="project__task">
+                <input class="project__checkbox" type="checkbox" id="task-2" name="subscribe" value="newsletter">
+                <label class="project__taskDescription" for="task-2">Tasky mock-ups ☺️</label>
+              </div>
+              <div class="project__task">
+                <input class="project__checkbox" type="checkbox" id="task-3" name="subscribe" value="newsletter">
+                <label class="project__taskDescription" for="task-3">Make php account system 👨‍💻</label>
+              </div>
+              <div class="project__task">
+                <input class="project__checkbox" type="checkbox" id="task-4" name="subscribe" value="newsletter">
+                <label class="project__taskDescription" for="task-4">Create a MySQL data base 🙈</label>
+              </div>
+              <div class="project__task">
+                <input class="project__checkbox" type="checkbox" id="task-5" name="subscribe" value="newsletter">
+                <label class="project__taskDescription" for="task-5">Tasky mock-ups ☺️</label>
+              </div>
+              <div class="project__task">
+                <input class="project__checkbox" type="checkbox" id="task-6" name="subscribe" value="newsletter">
+                <label class="project__taskDescription" for="task-6">Tasky mock-ups ☺️</label>
+              </div>
+            </form>
+            <div class="project__gradientBottom"></div>
+          </div>
+        </div>
+      <?php endforeach ?>
       <div class="project">
         <div class="project__progressBar">
           <div class="project__progressBar--active"></div>

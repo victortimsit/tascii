@@ -1,0 +1,30 @@
+.project__color--blue {
+  background-color: #3997d6;
+}
+.project__color--orange {
+  background-color: #dd6000;
+}
+.project__color--green {
+  background-color: #19bf65;
+}
+.project__color--purple {
+  background-color: #b0254b;
+}
+.project__color--yellow {
+  background-color: #fc0;
+}
+.project__icon--blue {
+  fill: #3997d6;
+}
+.project__icon--orange {
+  fill: #dd6000;
+}
+.project__icon--green {
+  fill: #19bf65;
+}
+.project__icon--purple {
+  fill: #b0254b;
+}
+.project__icon--yellow {
+  fill: #fc0;
+}

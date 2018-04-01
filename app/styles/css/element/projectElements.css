@@ -12,7 +12,7 @@
 }
 .project__icon {
   margin-left: 25px;
-  width: 17px;
+  width: 15px;
   height: 15px;
 }
 .project__title {
@@ -49,7 +49,6 @@
   margin-bottom: 10px;
   width: 100%;
   height: 10px;
-  background-color: #3997d6;
 }
 .project__taskDescription {
   width: 100%;
