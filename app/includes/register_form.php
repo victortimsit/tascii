@@ -1,10 +1,11 @@
-<?php 
+<?php
+
 function connection($account) {
     $_SESSION['user'] = $account;
     header('Location: ./');
 }
 
-function deconnection($account) {
+function deconnection() {
     unset($_SESSION['user']);
     header('Location: ./');
 }
@@ -30,9 +31,6 @@ if(!empty($_POST)) {
         // userCheck($userName, $usersName, $users, $pdo);
         function userCheck($userName, $usersName, $users, $pdo) {
             if(!empty($_POST['user_name']) && !empty($_POST['password'])) {
-                // $query = $pdo->query('SELECT * FROM users WHERE user_name = " ' . $userName . ' " ');
-                // $user = $query->fetch();
-        
                 // Values
                 $data = ['user_name' => $userName];
                 
@@ -43,13 +41,9 @@ if(!empty($_POST)) {
                 
                 // Execute request
                 $exec = $prepare->execute($data);
-        
+
                 $user = $prepare->fetch();
         
-                // echo '<pre>';
-                // var_dump($user);
-                // echo '</pre>';
-
                 if($user) {
                     // echo 'trouvéééé';
                     passwordCheck($user, $_POST['password']);
@@ -64,13 +58,16 @@ if(!empty($_POST)) {
         function passwordCheck($user, $password) {
             $userPassword = $user->password;
             if($userPassword == md5($password)) {
-                $_SESSION['user'] = $user->user_name;
+                connection($user->user_name);
             } else {
                 $registerErrors['password'] = "register__invalidPassword--active";
             }
         }
-        // passwordCheck($userName, $usersName, $users, $password, $pdo);
         userCheck($userName, $usersName, $users, $pdo);
     }
 }
 
+if(!empty($_GET['action']) && $_GET['action']=='deconnection')
+{
+    deconnection();
+}
