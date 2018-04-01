@@ -133,8 +133,14 @@
           <div class="project__content">
             <form class="project__form" action="/action_page.php">
               <div class="project__task">
-                <input class="project__checkbox" type="checkbox" id="task-1" name="subscribe" value="newsletter">
-                <label class="project__taskDescription" for="task-1">Make tasky wireframes 😀</label>
+                <a class="project__link" href="#">
+                  <div class="project__checkbox">
+                    <svg class="project__taskDone project__icon--<?= $project->color ?>">
+                    <use xlink:href="assets/images/materialIcons/taskDone.svg#taskDone"></use>
+                    </svg>
+                  </div>
+                  <p class="project__taskDescription">Make tasky wireframes 😀<p>
+                </a>
               </div>
               <div class="project__task">
                 <input class="project__checkbox" type="checkbox" id="task-2" name="subscribe" value="newsletter">
@@ -450,6 +456,7 @@
   <script src="scripts/fullScreenBox.js"></script>
   <script src="scripts/AddProjectWindow.js"></script>
   <script src="scripts/CategoryColor.js"></script>
+  <script src="scripts/TaskCheckbox.js"></script>
   <script src="scripts/main.js"></script>
   <!--endbuild-->
   <div class="php">

@@ -27,3 +27,6 @@ h1 {
   border-radius: 4px;
   box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.19);
 }
+a {
+  text-decoration: none;
+}

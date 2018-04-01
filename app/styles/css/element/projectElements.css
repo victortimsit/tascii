@@ -58,12 +58,21 @@
   display: flex;
   align-items: baseline;
 }
-.project__checkbox {
-  margin-right: 13px;
-  background-color: #f00;
+.project__link {
+  width: 100%;
 }
-input:checked + .project__taskDescription {
-  text-decoration: line-through;
+.project__checkbox {
+  width: 14px;
+  height: 14px;
+  float: left;
+  border-radius: 2px;
+  margin-right: 13px;
+  border: 1px solid #eee;
+  box-shadow: inset 0px 0px 2px 0px #eee;
+}
+.project__taskDone {
+  width: 14px;
+  height: 14px;
 }
 .project__gradientTop {
   height: 24px;

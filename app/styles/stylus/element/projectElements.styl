@@ -69,14 +69,27 @@
     display flex
     align-items baseline
 
+.project__link
+    width 100%
+    
+// .project__link:active .project__taskDescription
+//     text-decoration line-through
+
 
 .project__checkbox
-    
-    margin-right 13px
-    background-color red
+    width 14px
+    height 14px
 
-input:checked + .project__taskDescription
-    text-decoration line-through
+    float left
+    border-radius 2px
+    margin-right 13px
+    // background-color #EEEEEE
+    border 1px solid #EEEEEE
+    box-shadow inset 0px 0px 2px 0px rgba(238, 238, 238, 1)
+
+.project__taskDone
+    width 14px
+    height 14px
 
 
 .project__gradientTop
