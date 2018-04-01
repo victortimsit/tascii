@@ -4,6 +4,7 @@
   include 'includes/dataBase_connection.php';
   include 'includes/register_form.php';
   include 'includes/addProject_form.php';
+  include 'includes/addTask_form.php';
 
   function connection($account, $id) {
     $_SESSION['user'] = $account;
@@ -135,7 +136,12 @@
                   <img class="project__fullScreen project__fullScreen--active" src="assets/images/materialIcons/fullScreen.svg" alt="full screen icon">
                   <img class="project__fullScreenExit" src="assets/images/materialIcons/ExitfullScreen.svg" alt="Exit full screen icon">
                 </div>
-                <input class="project__addTaskInput" type="text" name="addTask" placeholder="Add a task...">
+                <form action="#" method="post">
+                  <label>
+                    <input type="hidden" name="project_id" value="<?= $project->id ?>">
+                    <input class="project__addTaskInput" type="text" name="content" placeholder="Add a task...">
+                  </label>
+                </form>
                 <div class="project__gradientTop"></div>
                 <div class="project__content">
                   <form class="project__form" action="/action_page.php">
