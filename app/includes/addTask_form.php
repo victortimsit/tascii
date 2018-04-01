@@ -17,6 +17,8 @@ if(!empty($_POST['content'])) {
         
         // Execute request
         $exec = $prepare->execute($data);
+
+        header('Location: ./');
     }
 }
 

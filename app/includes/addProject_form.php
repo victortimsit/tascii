@@ -16,5 +16,7 @@ if(!empty($_POST['project_title'])) {
         
         // Execute request
         $exec = $prepare->execute($data);
+
+        header('Location: ./');
     }
 }

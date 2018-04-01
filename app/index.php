@@ -5,6 +5,8 @@
   include 'includes/register_form.php';
   include 'includes/addProject_form.php';
   include 'includes/addTask_form.php';
+  include 'includes/taskDone_link.php';
+  include 'includes/taskDelete_link.php';
 
   function connection($account, $id) {
     $_SESSION['user'] = $account;
@@ -23,6 +25,10 @@
   $query = $pdo->query('SELECT * FROM projects WHERE user_id = " ' . $_SESSION['id'] . ' " ');
   // Éxécution de la requête et récupération des données
   $projects = $query->fetchAll();
+
+  $query = $pdo->query('SELECT * FROM tasks WHERE user_id = " ' . $_SESSION['id'] . ' " ');
+  // Éxécution de la requête et récupération des données
+  $tasks = $query->fetchAll();
 ?>
 
 <?php 
@@ -144,18 +150,28 @@
                 </form>
                 <div class="project__gradientTop"></div>
                 <div class="project__content">
-                  <form class="project__form" action="/action_page.php">
+                  
+                    <?php foreach($tasks as $task): ?>
+                      <?php 
+                        if($task->project_id == $project->id) { ?>
                     <div class="project__task">
-                      <a class="project__link" href="#">
-                        <div class="project__checkbox project__checkbox--notdone">
-                          <svg class="project__taskDone project__icon--<?= $project->color ?> project__taskDone--notdone">
+                      <a class="project__link" href="./?action=<?= $task->state ?>&id=<?= $task->id ?>">
+                        <div class="project__checkbox project__checkbox--<?= $task->state ?>">
+                          <svg class="project__taskDone project__icon--<?= $project->color ?> project__taskDone--<?= $task->state ?>">
                           <use xlink:href="assets/images/materialIcons/taskDone.svg#taskDone"></use>
                           </svg>
                         </div>
-                        <p class="project__taskDescription">Make tasky wireframes 😀<p>
+                        <p class="project__taskDescription"><?= $task->content ?><p>
+                      </a>
+                      <a href="./?action=delete&id=<?= $task->id?>">
+                        <svg class="project__taskTrash project__icon--<?= $project->color ?>">
+                          <use xlink:href="assets/images/materialIcons/trash.svg#trash"></use>  
+                        </svg>
                       </a>
                     </div>
-                  </form>
+                        <?php } ?>
+                    <?php endforeach ?>
+
                   <div class="project__gradientBottom"></div>
                 </div>
               </div>
@@ -245,6 +261,7 @@
         <script src="scripts/AddProjectWindow.js"></script>
         <script src="scripts/CategoryColor.js"></script>
         <script src="scripts/TaskCheckbox.js"></script>
+        <script src="scripts/ScrollTo.js"></script>
         <script src="scripts/main.js"></script>
         <!--endbuild-->
 
