@@ -67,12 +67,13 @@
   float: left;
   border-radius: 2px;
   margin-right: 13px;
-  border: 1px solid #eee;
-  box-shadow: inset 0px 0px 2px 0px #eee;
+  transition: border 300ms ease, box-shadow 300ms ease, transform 300ms ease;
 }
 .project__taskDone {
   width: 14px;
   height: 14px;
+  transform: rotate(90deg);
+  transition: opacity 300ms ease;
 }
 .project__gradientTop {
   height: 24px;

@@ -1,2 +1,3 @@
 <?php
-$errors = array();
+$dashboardErrors = array();
+$registerErrors = array();
