@@ -1,7 +1,7 @@
 <?php 
-if(!empty($_POST['project_title'])) {
-
-    !empty($_POST['project_title']) ? $title = $_POST['project_title'] : $dashboardErrors['project_name'] = 'addProject__empty--active';
+if(!empty($_POST)) {
+    
+    !empty($_POST['project_title']) ? $title = $_POST['project_title'] : $dashboardErrors['project_name'] = 'addProject__error--active';
     // NE PEUT PAS ÊTRE VIDE ICI CAR DES VALEURS SONT CHECKÉS PAR DÉFAUT
     !empty($_POST['category']) ? $category = $_POST['category'] : $errors['category'] = 'empty';
     !empty($_POST['color']) ? $color = $_POST['color'] : $errors['color'] = 'empty';

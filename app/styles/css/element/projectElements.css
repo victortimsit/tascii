@@ -27,15 +27,27 @@
   cursor: pointer;
   pointer-events: none;
   opacity: 0;
-  transition: 150ms opacity ease;
+  transition: 150ms opacity ease, 300ms transform ease;
+}
+.project__fullScreen:hover {
+  transform: scale(1.1);
+}
+.project__fullScreen:active {
+  transform: scale(0.9);
 }
 .project__fullScreenExit {
   position: absolute;
-  right: 25px;
+  right: 30px;
   cursor: pointer;
   pointer-events: none;
   opacity: 0;
-  transition: 150ms opacity ease;
+  transition: 150ms opacity ease, 300ms transform ease;
+}
+.project__fullScreenExit:hover {
+  transform: scale(1.1);
+}
+.project__fullScreenExit:active {
+  transform: scale(0.9);
 }
 .project__addTaskInput {
   width: 100%;
@@ -61,6 +73,17 @@
 .project__link {
   width: 100%;
 }
+.project__link:hover .project__taskDone {
+  transform: scale(1.1);
+}
+.project__link:hover .project__taskDone--notdone {
+  opacity: 0.3;
+  transform: scale(1.1);
+}
+.project__link:active .project__taskDone--notdone {
+  opacity: 1;
+  transform: scale(1.1);
+}
 .project__checkbox {
   width: 14px;
   height: 14px;
@@ -72,12 +95,18 @@
 .project__taskDone {
   width: 14px;
   height: 14px;
-  transform: rotate(90deg);
   transition: opacity 300ms ease;
 }
 .project__taskTrash {
   width: 20px;
   height: 20px;
+  transition: transform 300ms ease;
+}
+.project__taskTrash:hover {
+  transform: scale(1.1);
+}
+.project__taskTrash:active {
+  transform: scale(0.9);
 }
 .project__gradientTop {
   height: 24px;
@@ -94,4 +123,12 @@
   border-radius: 4px;
   background: linear-gradient(rgba(255,255,255,0), #fff);
   pointer-events: none;
+}
+.project__trash {
+  fill: #9b9b9b;
+  position: absolute;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
 }

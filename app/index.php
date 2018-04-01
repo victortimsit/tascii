@@ -41,6 +41,13 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Page</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+        <link rel="mask-icon" href="assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
         <!--build:css styles/styles.min.css-->
         <link rel="stylesheet" href="styles/css/base/styles.css" />
         <link rel="stylesheet" href="styles/css/layout/menu.css" />
@@ -64,7 +71,7 @@
             <div class="menu">
           <div class="menu__user">
             <span class="menu__userPicture"></span>
-            <span class="menu__userName">Victor</span>
+            <span class="menu__userName"><?= $_SESSION['user'] ?></span>
             <a href="./?action=deconnection" class="menu__signOut">
               <svg class="menu__navigationIcon">
                 <use xlink:href="assets/images/materialIcons/signOut.svg#signOut"></use>
@@ -128,6 +135,11 @@
         </div>
         <div class="container">
           <h1 class="encouragementSentence">Go, at least a little !</h1>
+          <a href="#">
+            <svg class="project__trash">
+              <use xlink:href="assets/images/materialIcons/trash.svg#trash"></use>
+            </svg>
+          </a>
           <div class="projects">
             <?php foreach($projects as $project): ?>
               <div class="project">
@@ -249,19 +261,13 @@
         <div class="baseline">
           <img src="assets/baseline.png" alt="">
         </div>
-        <div class="php">
-        <?php
-          echo '<pre>';
-          var_dump($dashboardErrors);
-          echo '</pre>';
-        ?>
-        </div>
         <!--build:js scripts/main.min.js -->
         <script src="scripts/fullScreenBox.js"></script>
         <script src="scripts/AddProjectWindow.js"></script>
         <script src="scripts/CategoryColor.js"></script>
         <script src="scripts/TaskCheckbox.js"></script>
         <script src="scripts/ScrollTo.js"></script>
+        <script src="scripts/DragDelete.js"></script>
         <script src="scripts/main.js"></script>
         <!--endbuild-->
 
@@ -275,26 +281,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Register</title>
+        <link rel="stylesheet" href="styles/css/base/register.css" />
       </head>
       <body>
-        <div class="php">
-        <? 
-            echo '<pre>';
-            var_dump(!empty($registerErrors) ? $registerErrors : false);
-            echo '</pre>';
-        ?>
-        </div>
-
         <div class="register">
             <form action="#" method="post">
-                <label for="user_name">User name</label>
-                <input type="text" name="user_name" placeholder="User name">
-                <label for="user_name">Password</label>
-                <input type="password" name="password" placeholder="Password">
-                <label>
-                <input type="submit">
-                <div>Connexion</div>
-                </label>
+                <label class="register__label" for="user_name">User name</label>
+                <input class="register__input" type="text" name="user_name" placeholder="User name">
+                <label class="register__label" for="password">Password</label>
+                <input class="register__input" type="password" name="password" placeholder="Password">
+                <div class="register__button">
+                  <label>
+                  <input class="register__submit" type="submit">
+                  <div>Connexion</div>
+                  </label>
+                </div>
             </form>
             <a href="createAccount.php">Create a account</a>
         </div>
